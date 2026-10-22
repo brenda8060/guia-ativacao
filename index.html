@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guia da Ativação</title>
+<style>
+:root{--bg:#f7f4ef;--card:#fff;--tx:#3d372f;--tx2:#5c5449;--tx3:#7a7268;--tx4:#a39a90;--tit:#2b2620;
+--linha:#e8e3db;--faixa:#f6f3ee;--vd:#4a8c57;--vdtx:#2f5f38;--vdbg:#e4f0e6;
+--lj:#d9822b;--ljtx:#7a4a12;--ljbg:#fdf1e0;--az:#3f6fa8;--azbg:#e8eff8;--rosa:#c2477e;--rosabg:#fbe9f1;--bolha:#e6f4df}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 15.5px/1.65 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:28px 16px 64px}
+header h1{font-size:27px;line-height:1.25;margin:0;color:var(--tit)}
+header .data{color:var(--tx4);font-size:13px;margin:4px 0 14px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+nav a{text-decoration:none;color:var(--tx2);background:var(--card);border:1px solid var(--linha);border-radius:99px;padding:4px 11px;font-size:13px}
+nav a:hover,nav a:focus-visible{border-color:var(--tx3);outline:none}
+.bloco{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:18px 20px;margin-top:16px;break-inside:avoid;scroll-margin-top:12px}
+.bloco h2{margin:0 0 10px;font-size:19px;color:var(--tit)}
+.bloco p{margin:8px 0}
+.abre{border-left:4px solid var(--rosa)}
+.metas{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.meta{background:var(--faixa);border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.4;min-width:0}
+.meta b{display:block;font-size:20px;color:var(--tit);margin:2px 0}
+.etapa{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--linha)}
+.etapa:last-child{border-bottom:0;padding-bottom:0}
+.etapa .dia{font-size:12px;font-weight:700;color:var(--az);text-transform:uppercase;letter-spacing:.04em;padding-top:2px}
+.etapa h3{margin:0 0 2px;font-size:16px;color:var(--tit)}
+.etapa p{margin:2px 0;font-size:14.5px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:9px 6px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+th{color:var(--tx3);font-weight:600;font-size:12.5px}
+td.quando{font-weight:700;color:var(--az);width:150px}
+.rl{display:block;margin:2px 0}
+.combinado{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--linha)}
+.combinado:last-of-type{border-bottom:0}
+.num{width:40px;height:40px;border-radius:50%;background:var(--rosabg);color:var(--rosa);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center}
+.combinado h3{margin:0 0 3px;font-size:16px;color:var(--tit)}
+.combinado p{margin:3px 0;font-size:14.5px}
+.pq{color:var(--tx3);font-size:14px}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.duas>div{border-radius:10px;padding:12px 14px;min-width:0;font-size:14.5px}
+.duas .seu{background:var(--vdbg)} .duas .expl{background:var(--ljbg)}
+.duas h3{margin:0 0 6px;font-size:15px;color:var(--tit)}
+.duas ul{margin:0;padding-left:18px}.duas li{margin:4px 0}
+ol.prio{margin:6px 0 0;padding-left:22px}ol.prio li{margin:4px 0}
+ul.check{list-style:none;margin:6px 0 0;padding:0}ul.check li{margin:5px 0}
+.fecho{border-left:4px solid var(--rosa)}
+.arvore{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.ramo{background:var(--faixa);border-radius:10px;padding:12px 14px;min-width:0}
+.ramo .perg{font-weight:700;color:var(--tit);font-size:14.5px;margin:0 0 8px}
+.saida{display:block;border-radius:8px;padding:8px 10px;margin-top:6px;font-size:14px;background:var(--card);border:1px solid var(--linha)}
+.saida b{color:var(--tit)}
+.saida .s{display:block;color:var(--tx3);font-size:13px;margin-top:2px}
+@media (max-width:620px){.arvore{grid-template-columns:1fr}}
+.passos{margin:6px 0 0;padding:0;list-style:none;counter-reset:p}
+.passos>li{position:relative;padding:12px 14px 12px 52px;background:var(--faixa);border-radius:10px;margin-top:8px}
+.passos>li::before{counter-increment:p;content:counter(p);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--azbg);color:var(--az);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.passos .perg{display:block;font-weight:700;color:var(--tit);font-size:15px}
+.passos .quando2{display:inline-block;font-size:11.5px;font-weight:700;color:var(--ljtx);background:var(--ljbg);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+.passos .r{display:block;margin-top:6px;font-size:14.5px}
+.passos .s{display:block;color:var(--tx3);font-size:13px;margin-top:2px}
+footer{color:var(--tx4);font-size:12px;margin-top:22px}
+.navgrupo{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px}
+.navgrupo .rot{font-size:11.5px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;margin-right:2px}
+.parte{margin:34px 0 0;padding:16px 20px;border-radius:12px;background:var(--azbg);border:1px solid var(--linha)}
+.parte .rot{font-size:12px;font-weight:700;color:var(--az);text-transform:uppercase;letter-spacing:.06em}
+.parte h2{margin:2px 0 6px;font-size:22px;color:var(--tit)}
+.parte p{margin:6px 0;font-size:14.5px}
+.legenda{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.legenda span{background:var(--card);border:1px solid var(--linha);border-radius:99px;padding:3px 10px;font-size:13px}
+.voce{display:block;font-size:14.5px;margin:8px 0;padding-left:12px;border-left:3px solid var(--az)}
+.bolha{background:var(--bolha);border-radius:12px 12px 12px 3px;padding:10px 13px;margin:8px 0;font-size:14.5px;line-height:1.55;max-width:560px}
+.bolha .qual{display:block;font-size:11.5px;font-weight:700;color:var(--vdtx);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.bolha p{margin:4px 0}
+.sub{margin:16px 0 4px;font-size:15.5px;color:var(--tit)}
+.versoes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.versoes>div{min-width:0}
+.semana{border-top:1px solid var(--linha);padding:12px 0}
+.semana:first-of-type{border-top:0}
+.semana h3{margin:0 0 4px;font-size:16px;color:var(--tit)}
+.semana ul{margin:6px 0 0;padding-left:18px;font-size:14px;color:var(--tx2)}.semana li{margin:3px 0}
+.momento{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--linha)}
+.momento:last-of-type{border-bottom:0}
+.momento h3{margin:0 0 3px;font-size:16px;color:var(--tit)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:4px;padding:1px 6px;vertical-align:1px}
+.tag.cli{background:var(--vdbg);color:var(--vdtx)}.tag.int{background:var(--ljbg);color:var(--ljtx)}
+@media (max-width:620px){.versoes{grid-template-columns:1fr}}
+a.ir{font-size:13px;font-weight:600;color:var(--az);text-decoration:none;white-space:nowrap}
+.parte table{background:var(--card);border-radius:8px}
+.rapida a{color:var(--tit);text-decoration:none}
+.rapida td:last-child{font-family:ui-monospace,Consolas,monospace;font-size:13px;color:var(--tx2)}
+@media (max-width:620px){.metas{grid-template-columns:1fr 1fr}.duas{grid-template-columns:1fr}.etapa{grid-template-columns:1fr;gap:2px}td.quando{width:auto}}
+@media (prefers-color-scheme:dark){:root{--bg:#191714;--card:#221f1b;--tx:#e6e0d6;--tx2:#c4bdb1;--tx3:#a49c90;
+--tx4:#7d766c;--tit:#f2ede4;--linha:#332f29;--faixa:#2a2621;--vdbg:#1f3324;--vdtx:#8fd4a0;--ljbg:#33261a;--ljtx:#f0b877;
+--az:#8fb4e3;--azbg:#1d2633;--rosa:#e88bb5;--rosabg:#3a2230;--bolha:#20321f}}
+@media print{body{background:#fff}nav{display:none}.bloco{break-inside:avoid}}
+</style></head><body><div class="wrap">
+
+<header>
+  <h1>Guia da Ativação 🧭</h1>
+  <div class="data">Pro Gabs · outubro de 2026 · da Brendinha, com carinho</div>
+</header>
+
+<nav style="display:block">
+  <div class="navgrupo"><span class="rot">Parte 1 · As regras</span><a href="#papel">O nosso papel</a><a href="#jornada">A jornada</a><a href="#regras">As regras</a><a href="#decidir">Como decidir</a><a href="#embaixador">O embaixador</a><a href="#combinados">Os combinados</a><a href="#dia">O seu dia</a></div>
+  <div class="navgrupo"><span class="rot">Parte 2 · Como conversar</span><a href="#c-d0">D0</a><a href="#c-d3">D3 e a ligação</a><a href="#c-semanas">Semanas 2 a 6</a><a href="#c-sumiu">Não respondeu</a><a href="#c-45">Dia 45 e 75</a><a href="#c-frentes">Preço, cardápio e recompra</a><a href="#c-objecoes">Objeções</a><a href="#c-canais">Ligação, áudio ou texto</a><a href="#c-registro">Registro no Planner</a></div>
+</nav>
+
+<div class="bloco abre" id="papel">
+  <h2>💗 O nosso papel</h2>
+  <p>O Hunter ou o Embaixador abrem a porta. A Ativação faz o parceiro querer ficar.</p>
+  <p>Nos primeiros 45 dias depois do primeiro pedido, a gente garante que o parceiro tem tudo pra vender bem: preço certo e um bom cardápio. <b>Uma boa Ativação transforma um primeiro pedido numa parceria que compra de novo.</b></p>
+  <p><b>Metas da área:</b> o que eu espero que aconteça com os clientes que passam por você.</p>
+  <div class="metas">
+    <div class="meta">🔁 Fazem o 2º pedido<b>6 em 10</b></div>
+    <div class="meta">📋 Saem com cardápio<b>7 em 10</b></div>
+    <div class="meta">💰 Saem com preço certo<b>5 em 10</b></div>
+    <div class="meta">🚦 Saem com decisão até o dia 75<b>todos</b></div>
+  </div>
+</div>
+
+<div class="bloco" id="jornada">
+  <h2>🗺️ A jornada do cliente</h2>
+  <div class="etapa"><div class="dia">Dia 0</div><div><h3>Boas-vindas</h3><p>O cliente aparece no Guia de Ativação no dia da entrega. Se apresenta, explica que o embaixador da região acompanha presencialmente (o nome está na ficha do cliente) e que você fica no WhatsApp e por ligação nesse começo. Fecha com a pesquisa de 0 a 10. Sem pressa: esse contato é pra criar relação. <a class="ir" href="#c-d0">Como conversar →</a></p></div></div>
+  <div class="etapa"><div class="dia">Dia 3</div><div><h3>Primeiro retorno 📞 + 💬</h3><p>Liga primeiro. Não pode faltar: <b>como está a venda, o preço e o cardápio</b>. A ordem é sua, do jeito que a conversa pedir. Só não termina sem o preço conversado. <b>Não atendeu? Puxa a mesma conversa pelo WhatsApp</b>: conta que tentou ligar e já pergunta como está a venda e por quanto estão vendendo. Se ele preferir falar por telefone, liga no horário que ele disser. <a class="ir" href="#c-d3">Como conversar →</a></p></div></div>
+  <div class="etapa"><div class="dia">Toda semana</div><div><h3>Acompanhamento</h3><p>Pelo menos um contato por semana, sempre com um objetivo: preço, cardápio, giro, recompra, ativações de marca ou alguma dúvida dele. Vai <b>pelo canal que o cliente mais responde</b> e, se ele parar de responder, troca o canal. <a class="ir" href="#c-semanas">Como conversar →</a></p></div></div>
+  <div class="etapa"><div class="dia">Dia 45</div><div><h3>Decisão</h3><p>Hora de definir o próximo passo do parceiro: VDI, Fôlego, Retenção ou inativação. <a class="ir" href="#c-45">Como conversar →</a></p></div></div>
+  <div class="etapa"><div class="dia">Dia 45 a 75</div><div><h3>Fôlego (só se precisar)</h3><p>Se no dia 45 ainda tiver negociação de preço ou cardápio aberta no Planner, o cliente ganha até 30 dias a mais pra terminar esse trabalho. <b>O dia 75 é o limite final</b>: ali todo cliente sai da Ativação. <a class="ir" href="#c-45">Como conversar →</a></p></div></div>
+</div>
+
+<div class="bloco" id="regras">
+  <h2>📌 As regras</h2>
+  <div class="tbl"><table>
+    <tr><th>Quando</th><th>O que fazer</th></tr>
+    <tr><td class="quando">Antes do 1º contato</td><td>O cliente, ou o grupo dele, já é de um VDI? <b>Devolve pro VDI.</b></td></tr>
+    <tr><td class="quando">Não respondeu</td><td>
+      <span class="rl">2 mensagens seguidas sem resposta → <b>liga</b></span>
+      <span class="rl">Não atendeu → <b>pede visita ao embaixador</b> e continua tentando (ligação em outro horário, áudio)</span>
+      <span class="rl">Até o dia 45, no máximo. Aí entra a decisão do dia 45.</span></td></tr>
+    <tr><td class="quando">Fez 3 pedidos</td><td>Sem ajuste pendente? <b>Pode passar pro VDI</b>, mesmo antes do dia 45.</td></tr>
+    <tr><td class="quando">Dia 45</td><td>
+      <span class="rl">Recomprou e está tudo resolvido → <b>passa pro VDI</b></span>
+      <span class="rl">Tem negociação de preço ou cardápio aberta no Planner → <b>Fôlego</b> até o dia 75</span>
+      <span class="rl">Parou de comprar, mas você acredita que ele pode voltar → <b>Retenção</b>, registrando o motivo</span>
+      <span class="rl">Sem pedido há 20 dias e sem sinal de volta → <b>inativa</b></span></td></tr>
+    <tr><td class="quando">Dia 75</td><td>Ninguém fica. Pediu nos últimos 20 dias → <b>VDI</b>. Parou, mas pode voltar → <b>Retenção</b>. Sem sinal de volta → <b>inativa</b>.</td></tr>
+    <tr><td class="quando">A qualquer momento</td><td>Avisou que não quer continuar → <b>inativa</b>.</td></tr>
+  </table></div>
+</div>
+
+<div class="bloco" id="decidir">
+  <h2>🚦 Como decidir o caminho</h2>
+  <p>No dia 45 (e no dia 75, pra quem teve Fôlego), responde essas perguntas na ordem. Parou na primeira que for "sim".</p>
+  <ol class="passos">
+    <li><span class="perg">Tem negociação de preço ou cardápio aberta? <span class="quando2">SÓ NO DIA 45</span></span>
+      <span class="r">Sim, com próximo passo marcado → <b>⏳ Fôlego</b> até o dia 75. Lá, você volta pra pergunta 2.</span>
+      <span class="s">Fôlego é pra terminar um trabalho que já começou, não pra esperar o cliente responder.</span></li>
+    <li><span class="perg">Ele já recomprou e pediu nos últimos 20 dias?</span>
+      <span class="r">Sim → <b>🚀 VDI</b>.</span>
+      <span class="s">Ele já tem o hábito de comprar, então o VDI segue com ele daqui.</span></li>
+    <li><span class="perg">Parou de comprar. Tem sinal de que ele volta?</span>
+      <span class="r">Sim → <b>🔁 Retenção</b>. Não → <b>⏹️ Inativa</b>.</span>
+      <span class="s">Sinal de volta: respondeu nos últimos 15 dias, tem um motivo passageiro (estoque cheio, obra, férias, troca de responsável) ou o embaixador viu a cerveja girando no ponto.<br>Sem sinal: avisou que não quer, fechou, foi pra outra cervejaria, era pedido de evento, ou não respondeu nem a mensagem, nem a ligação, nem a visita.</span></li>
+  </ol>
+  <p class="pq" style="margin-top:12px">Na dúvida entre Retenção e inativar, pensa: <i>"se eu ligasse amanhã, ele atenderia e falaria de pedido?"</i> Se sim, Retenção. Se não, inativa. Em qualquer caminho, registra o motivo no Planner.</p>
+</div>
+
+<div class="bloco" id="embaixador">
+  <h2>🛵 Quando chamar o embaixador</h2>
+  <p>O embaixador é o nosso olho na rua. Sempre que você precisar ver ou resolver algo no ponto de venda, <b>pede uma visita no Planner, dizendo o motivo</b>:</p>
+  <div class="tbl"><table>
+    <tr><td>🔕</td><td><b>O cliente sumiu:</b> não respondeu 2 mensagens e não atendeu a ligação</td></tr>
+    <tr><td>📦</td><td><b>Estoque e exposição:</b> saber se a cerveja está no ponto, gelada e à vista</td></tr>
+    <tr><td>📋</td><td><b>Cardápio:</b> conferir se o cardápio novo está valendo, ou levar material</td></tr>
+    <tr><td>🚚</td><td><b>Problema no ponto:</b> entrega, chopeira, vasilhame ou operação</td></tr>
+    <tr><td>👤</td><td><b>Mudou o responsável:</b> descobrir quem decide agora</td></tr>
+  </table></div>
+  <p><b>A visita é um reforço, não uma passagem.</b> O cliente continua sendo seu, então segue tentando enquanto ela não acontece. Se a visita estiver demorando, traz pro nosso 1:1 que eu ajudo a destravar.</p>
+  <p class="pq">Se foi o Hunter quem conquistou o cliente, ele também pode ajudar a retomar a conversa.</p>
+</div>
+
+<div class="bloco" id="combinados">
+  <h2>🤝🏾 Os nossos combinados</h2>
+  <p>Seu primeiro contato já é um destaque: antes de você chegar, 3 em cada 10 clientes recebiam contato no dia da entrega, e com você são 8 em cada 10. 💗 Os combinados são pra levar esse mesmo cuidado pro resto da jornada.</p>
+
+  <div class="combinado"><div class="num">1</div><div>
+    <h3>📞 No dia 3, a gente liga e fala de preço</h3>
+    <p>Liga primeiro e, se não atender, a conversa segue pelo WhatsApp. Entram a venda, o preço e o cardápio, na ordem que você quiser. Pode começar pelo cardápio, sem problema. O combinado é sair do dia 3 com <b>o preço pelo menos conversado</b>.</p>
+    <p class="pq">Por quê, em números:<br>
+    ⏱️ <b>O preço sai cedo e o cardápio sai tarde.</b> 7 em 10 preços fecham nas 3 primeiras semanas. 6 em 10 cardápios só fecham depois disso.<br>
+    🔁 <b>Quem fecha os dois recompra mais.</b> Fechou cardápio e preço: 2 em 3 fazem o 2º pedido. Só o cardápio: 1 em 2. Nenhum dos dois: 4 em 10.<br>
+    👉 Então o preço sai conversado no dia 3, e o cardápio segue no tempo dele.</p>
+  </div></div>
+
+  <div class="combinado"><div class="num">2</div><div>
+    <h3>📅 Nenhum cliente fica 7 dias sem contato</h3>
+    <p>Pelo canal que o cliente mais responde. Se ele parar de responder, troca o canal.</p>
+    <p class="pq">Por quê: muitos clientes passam 2 semanas ou mais sem ouvir da gente, e é nesse silêncio que o segundo pedido escapa.</p>
+  </div></div>
+
+  <div class="combinado"><div class="num">3</div><div>
+    <h3>🚦 No dia 45, todo cliente sai com uma decisão</h3>
+    <p>VDI, Fôlego, Retenção ou inativação. Ninguém fica parado.</p>
+    <p class="pq">Por quê: cliente sem decisão ocupa espaço na sua carteira e fica sem ninguém cuidando dele de verdade.</p>
+  </div></div>
+
+  <div class="duas">
+    <div class="seu"><h3>🕊️ O que é seu</h3><ul>
+      <li>o jeito de puxar cada conversa</li>
+      <li>o que falar e em que ordem</li>
+      <li>o canal do dia a dia: texto, áudio ou ligação (a ligação é a primeira tentativa no dia 3 e quando o cliente para de responder)</li>
+      <li>como negociar cardápio, preço e o próximo pedido</li>
+    </ul></div>
+    <div class="expl"><h3>🙋🏾 Quando não fizer sentido</h3><p>Cliente que só quer zap, ou que não atende de jeito nenhum? Tudo bem: <b>registra o motivo no Planner</b> e segue. O combinado é cumprir ou explicar.</p></div>
+  </div>
+  <p class="pq" style="margin-top:14px">📊 <b>No nosso 1:1</b>, a gente olha esses três combinados e os resultados da sua turma: quantos fizeram o 2º pedido, saíram com cardápio e com preço certo. A variável mostra o que você produz no mês; a turma mostra se isso está chegando em todo cliente que entra. Por isso a gente olha as duas. 🫶🏾</p>
+</div>
+
+<div class="bloco" id="dia">
+  <h2>☀️ O seu dia</h2>
+  <p>Começa pelo WhatsApp, respondendo quem já falou com você. Depois abre o Planner e segue essa ordem de prioridade:</p>
+  <ol class="prio">
+    <li>Quem respondeu</li>
+    <li>Quem está recebendo o primeiro pedido</li>
+    <li>Follow-ups do dia</li>
+    <li>Quem está negociando preço ou cardápio</li>
+    <li>Quem está perto do dia 45</li>
+    <li>Quem está sem retorno</li>
+  </ol>
+  <p style="margin-top:14px"><b>Antes de fechar o computador:</b></p>
+  <ul class="check">
+    <li>☑️ Todo cliente novo recebeu contato</li>
+    <li>☑️ Nenhuma conversa importante ficou sem resposta</li>
+    <li>☑️ Os registros estão em dia no Planner</li>
+    <li>☑️ Todo cliente tem um próximo passo agendado</li>
+  </ul>
+</div>
+
+<div class="parte" id="conversar">
+  <span class="rot">Parte 2</span>
+  <h2>💬 Como conversar</h2>
+  <p><b>Cada contato precisa ter um motivo, cada argumento precisa gerar valor pro cliente e cada conversa precisa terminar com um próximo passo claro.</b></p>
+  <p>Isso aqui não é roteiro pra decorar. É o raciocínio por trás de cada conversa, pra você entender o momento do cliente, descobrir o que está travando a venda e conduzir até uma ação concreta, do seu jeito. As mensagens são pontos de partida: adapta ao histórico de cada cliente.</p>
+  <div class="legenda"><span>🧭 <b>Pra você:</b> orientação interna</span><span>💬 <b>Pro cliente:</b> ideia de mensagem ou de fala</span><span>✏️ <b>(;atalho):</b> o atalho no Planner</span></div>
+  <h3 class="sub">⚡ Consulta rápida: em que momento está o cliente?</h3>
+  <div class="tbl"><table class="rapida">
+    <tr><th>Momento</th><th>O que fazer</th><th>Atalhos</th></tr>
+    <tr><td><a href="#c-d0"><b>📦 Dia da entrega</b></a></td><td>Se apresenta e faz a pesquisa</td><td>;pesq → ;d0emb ou ;d0b → ;2pesq</td></tr>
+    <tr><td><a href="#c-d3"><b>📞 Dia 3</b></a></td><td>Liga: venda, preço e cardápio</td><td>não atendeu ;d3 · depois ;resumo</td></tr>
+    <tr><td><a href="#c-semanas"><b>🔁 Semanas 2 a 6</b></a></td><td>1 contato com o tema da semana</td><td>;s2 · ;s3 · ;s4 · ;s5 · ;s6</td></tr>
+    <tr><td><a href="#c-sumiu"><b>🔕 Não respondeu</b></a></td><td>Assunto novo → liga → embaixador</td><td>;sumiu · ;tentei</td></tr>
+    <tr><td><a href="#c-45"><b>🚦 Dia 45 ou 75</b></a></td><td>Decide o caminho</td><td>;vdi · ;folego · ;ultima</td></tr>
+    <tr><td><a href="#c-frentes"><b>📋 Falando de cardápio</b></a></td><td>Usa o argumento</td><td>;card</td></tr>
+    <tr><td><a href="#c-objecoes"><b>🙋🏾 Cliente travou</b></a></td><td>Investiga a causa antes de responder</td><td>—</td></tr>
+  </table></div>
+</div>
+
+<div class="bloco" id="c-d0">
+  <h2>📦 D0: boas-vindas</h2>
+  <span class="voce">🧭 Manda no dia da entrega (se cair no fim de semana, na segunda). São <b>3 balões, nessa ordem</b>. Pra escolher o do meio, abre a ficha do cliente e olha o campo <b>"Embaixador"</b> no topo: tem nome, usa o <b>;d0emb</b> e troca o nome. Aparece "—", usa o <b>;d0b</b>.</span>
+  <div class="bolha"><span class="qual">💬 Balão 1 · quem eu sou (;pesq)</span><p>Oi, [Nome do Cliente]! Tudo bem? Aqui é o Gabriel, da Cervejaria Hocus Pocus 🍻</p><p>Vi que vocês do [Nome do Estabelecimento] fizeram o primeiro pedido com a gente e tô passando pra me apresentar!</p></div>
+  <div class="versoes">
+    <div class="bolha"><span class="qual">💬 Balão 2 · com embaixador (;d0emb)</span><p>O [Nome do embaixador] vai acompanhar vocês presencialmente, e eu vou estar por aqui no WhatsApp e por ligação nesse começo, ajudando com preços, cardápio e dicas pras nossas cervejas venderem bem por aí.</p><p>Se tiverem alguma dúvida ou precisarem de ajuda com algum pedido, é só me chamar. Já salva o meu contato, por favor! 😊</p></div>
+    <div class="bolha"><span class="qual">💬 Balão 2 · sem embaixador (;d0b)</span><p>Eu vou estar por aqui no WhatsApp e por ligação nesse começo, ajudando com preços, cardápio e dicas pras nossas cervejas venderem bem por aí.</p><p>Se tiverem alguma dúvida ou precisarem de ajuda com algum pedido, é só me chamar. Já salva o meu contato, por favor! 😊</p></div>
+  </div>
+  <div class="bolha"><span class="qual">💬 Balão 3 · a pesquisa (;2pesq)</span><p>E uma coisinha rápida: de 0 a 10, como foi pra fechar esse primeiro pedido com a gente? Pode responder só com o número, que já me ajuda muuuito 🙏</p></div>
+  <span class="voce">🧭 <b>Quando ele responder a nota:</b> 9 ou 10, agradece e avisa que vai ligar daqui uns dias. 7 ou 8, pergunta o que faltou pra ser 10. 0 a 6, pergunta o que pegou e avisa quem fechou o pedido. <b>Se ele responder pedindo cerveja, vende primeiro:</b> a pesquisa nunca segura uma venda.</span>
+</div>
+
+<div class="bloco" id="c-d3">
+  <h2>📞 D3: a ligação em 4 momentos</h2>
+  <span class="voce">🧭 <b>Liga direto.</b> O cliente já sabe que você liga, porque o D0 avisou. Mandar mensagem perguntando se pode ligar só atrasa: quem não responde nunca recebe a ligação. <b>Uns 5 minutos bastam.</b> Uma conversa curta que termina com uma ação vale mais que uma longa sem combinado.</span>
+  <div class="momento"><div class="num">1</div><div><h3>Abertura</h3>
+    <p>🧭 Se apresenta, liga com a mensagem do D0 e pede licença pro tempo dele. Não pode agora? Combina um horário.</p>
+    <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Oi, [Nome]! Aqui é o Gabriel, da Hocus Pocus, que te mandou mensagem no dia da entrega 😊 Tem uns 5 minutinhos?"</div></div></div>
+  <div class="momento"><div class="num">2</div><div><h3>Escuta</h3>
+    <p>🧭 Começa pelo que ele viveu nesses primeiros dias. O que ele contar mostra por onde seguir. Pergunta e espera.</p>
+    <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Como foram esses primeiros dias com as cervejas? O pessoal tem curtido?"</div></div></div>
+  <div class="momento"><div class="num">3</div><div><h3>Investigação: venda, preço e cardápio</h3>
+    <p>🧭 A ordem é a da conversa. Contou que vende bem, vai pro preço. Contou que o pessoal não acha a cerveja, vai pro cardápio. Contou que está acabando, vai pra reposição e confere o preço no caminho. <b>A ligação não termina sem falar de preço.</b></p>
+    <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Por quanto vocês estão vendendo?" · "Já conseguiram colocar no cardápio, ou em algum lugar que o cliente veja?"</div></div></div>
+  <div class="momento"><div class="num">4</div><div><h3>Fechamento com próximo passo</h3>
+    <p>🧭 Um próximo passo bom tem <b>o que, quem e quando</b>. "Qualquer coisa me chama" não é próximo passo. Depois de desligar, registra no Planner e manda por escrito o que foi combinado.</p>
+    <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Fechado então: te mando a sugestão de preço ainda hoje, e semana que vem te pergunto como ficou o cardápio, combinado?"</div>
+    <div class="bolha"><span class="qual">💬 Depois da ligação (;resumo)</span>"Foi ótimo falar contigo! Pra não esquecer, te mando aqui o que a gente combinou 👇🏾"</div></div></div>
+  <h3 class="sub">Não atendeu? A conversa segue pelo WhatsApp</h3>
+  <div class="bolha"><span class="qual">💬 Mensagem (;d3)</span><p>Oi, [Nome do Cliente]! Tentei te ligar porque queria saber como foram esses primeiros dias com a Hocus Pocus. Já conseguiram colocar as cervejas pra vender por aí?</p><p>Se preferir conversar por telefone, me fala um horário que funcione pra você e te ligo!</p></div>
+  <span class="voce">🧭 Quando ele responder, a conversa segue o mesmo caminho da ligação: venda, preço e cardápio. Não precisa tentar ligar de novo no dia seguinte: daí em diante é o contato semanal.</span>
+</div>
+
+<div class="bloco" id="c-semanas">
+  <h2>🔁 Semanas 2 a 6: um tema por semana</h2>
+  <span class="voce">🧭 Os temas são sugestão. <b>Se o assunto da semana já foi resolvido, pula pro próximo, mas a semana não passa sem contato.</b> Se o cliente trouxer um assunto importante, vai no assunto dele. Antes de chamar, confere as últimas conversas, os pedidos e os combinados.</span>
+  <div class="semana"><h3>📋 Semana 2 (~dia 10) · Cardápio</h3>
+    <div class="bolha"><span class="qual">💬 ;s2</span>Oi, [Nome do Cliente]! Como ficou a ideia de incluir nossas cervejas no cardápio? Se precisar de ajuda com as descrições ou fotos, posso te mandar por aqui 😊</div>
+    <ul><li>Ainda não incluiu? Entende se existe alguma dificuldade.</li><li>Já incluiu? Pergunta se precisa de algum material de apoio.</li><li>Cardápio não é prioridade pra esse PDV? Busca outra forma de dar visibilidade às cervejas.</li></ul></div>
+  <div class="semana"><h3>📦 Semana 3 (~dia 17) · Primeiras vendas e estoque</h3>
+    <div class="bolha"><span class="qual">💬 ;s3</span>Oi, [Nome do Cliente]! Me conta, quais cervejas o pessoal tem curtido mais por aí? E como tá o estoque, acha que vai precisar repor alguma coisa nos próximos dias?</div>
+    <ul><li>É a semana do 2º pedido: em média ele sai por volta do dia 20.</li><li>Vendas paradas? Investiga preço, divulgação, cardápio e se a equipe conhece as cervejas.</li><li>Estoque baixo? Aproveita pra encaminhar a reposição.</li></ul></div>
+  <div class="semana"><h3>🍻 Semana 4 (~dia 24) · Novidades e oportunidades</h3>
+    <div class="bolha"><span class="qual">💬 ;s4</span>Oi, [Nome do Cliente]! Temos uma novidade por aqui e achei que vocês poderiam gostar 👇🏾 <i>(em seguida, o atalho do lançamento ou sazonal)</i></div>
+    <ul><li>Escolhe novidades que façam sentido pro perfil da casa, e explica por que combinam.</li><li>Teve interesse? Avança pra disponibilidade, preço e próximo pedido.</li><li>Sem lançamento relevante? Usa outro assunto. Não precisamos falar de novidade só pra cumprir a cadência.</li></ul></div>
+  <div class="semana"><h3>🔁 Semana 5 (~dia 31) · Próxima reposição</h3>
+    <div class="bolha"><span class="qual">💬 ;s5</span>Oi, [Nome do Cliente]! Passando pra saber como tá o estoque por aí. Já vale a pena deixar o próximo pedido encaminhado pra vocês não ficarem sem?</div>
+    <ul><li>Considera o volume do último pedido e o ritmo de consumo que ele contou.</li><li>Ainda tem bastante produto? Entende quando ele imagina que vai repor.</li><li>Não está vendendo como esperava? Investiga a causa antes de insistir numa nova compra.</li><li>Já fez o 2º pedido? O foco é manter o ritmo e começar a preparar a passagem pro VDI.</li></ul></div>
+  <div class="semana"><h3>💬 Semana 6 (~dia 38) · Experiência com a parceria</h3>
+    <div class="bolha"><span class="qual">💬 ;s6</span>Oi, [Nome do Cliente]! Já faz mais de um mês que começamos essa parceria. Como tá sendo trabalhar com a Hocus por aí? Tem alguma coisa em que a gente possa te ajudar ou que podemos fazer melhor?</div>
+    <ul><li>Tem dificuldade? Busca exemplos concretos e combina um próximo passo possível.</li><li>Está distante ou não recomprou? Entende o motivo antes de concluir que não há interesse.</li><li>Já fez o 2º pedido e está tudo andando? Avisa que logo vai apresentar quem segue com ele no dia a dia.</li><li>Ainda tem negociação de preço ou cardápio? Registra no Planner, porque é isso que permite o Fôlego no dia 45.</li></ul></div>
+</div>
+
+<div class="bloco" id="c-sumiu">
+  <h2>🔕 Quando o cliente não responde</h2>
+  <span class="voce">🧭 A regra: <b>2 mensagens seguidas sem resposta → ligação → se não atender, visita do embaixador.</b> Cada tentativa traz um assunto novo, nunca uma cobrança.</span>
+  <div class="momento"><div class="num">1</div><div><h3>1ª mensagem sem resposta</h3><p>🧭 Segue a cadência normal. O próximo contato já traz um assunto novo.</p></div></div>
+  <div class="momento"><div class="num">2</div><div><h3>2ª mensagem: muda o assunto, e se fizer sentido manda um áudio curto</h3>
+    <div class="bolha"><span class="qual">💬 2ª mensagem (;sumiu)</span>Oi, [Nome do Cliente]! Queria aproveitar pra saber se vocês estão precisando de algum material ou apoio pra divulgar as cervejas por aí. Se tiver algo em que eu possa ajudar, é só me falar 😊</div>
+    <p class="pq">Outros ângulos: fotos e descrições pro cardápio, material pra apresentar as cervejas, se a equipe conhece as cervejas, ou retomar preço ou estoque se ficou algo pendente. Se você já sabe qual é a dificuldade, vai direto nela.</p></div></div>
+  <div class="momento"><div class="num">3</div><div><h3>Liga (sem avisar antes)</h3>
+    <div class="bolha"><span class="qual">💬 Se não atender (;tentei)</span>Oi, [Nome do Cliente]! Tentei te ligar agora pra conversar um pouquinho sobre a parceria. Quando tiver um tempinho, me chama por aqui que a gente conversa 😊</div></div></div>
+  <div class="momento"><div class="num">4</div><div><h3>Pede visita ao embaixador, no Planner e com o motivo</h3>
+    <div class="bolha"><span class="qual">🧭 Exemplo de pedido</span>Cliente sem responder desde [data]: 2 mensagens e 1 ligação sem retorno. Consegue dar uma olhada em como estão as coisas no ponto? Seria importante entender se as cervejas estão à venda, como está o estoque e quem está acompanhando essa parceria por aí.</div>
+    <p>🧭 Enquanto a visita não acontece, o cliente continua seu: tenta em outro horário ou por áudio. Demorou? Leva pro 1:1. Voltou a responder? Retoma a cadência de onde parou.</p></div></div>
+</div>
+
+<div class="bloco" id="c-45">
+  <h2>🚦 Dia 45 e dia 75: as mensagens de cada caminho</h2>
+  <span class="voce">🧭 A decisão segue as 3 perguntas do <a href="#decidir">Como decidir</a>. Ela é interna: só quem vai pro VDI recebe mensagem de transição. <b>Não decide só pela falta de resposta:</b> olha também o histórico de compras, as conversas e o que o embaixador viu. Em qualquer caminho, registra o contexto no Planner.</span>
+  <h3 class="sub">🚀 VDI · recomprou e não tem pendência (ou já fez 3 pedidos, mesmo antes do dia 45)</h3>
+  <div class="bolha"><span class="qual">💬 ;vdi</span>Oi, [Nome do Cliente]! Foi muito bom acompanhar esse começo com vocês 😊 A partir de agora, quem vai cuidar do dia a dia de vocês é o(a) [Nome do VDI], que vai seguir dando todo o suporte. Já salva o contato dele(a), tá? Seguimos juntos!</div>
+  <p class="pq">🧭 Passa pro VDI o histórico, os combinados e as oportunidades. O cliente precisa sentir continuidade, não que está começando tudo de novo.</p>
+  <h3 class="sub">⏳ Fôlego · tem negociação de preço ou cardápio aberta no Planner</h3>
+  <div class="bolha"><span class="qual">💬 ;folego</span>Oi, [Nome do Cliente]! Passando pra retomar aquela conversa sobre [cardápio/preço]. Queria ver contigo como podemos avançar com isso. O que acha?</div>
+  <p class="pq">🧭 Não avisa que ele ganhou mais tempo: só continua a conversa que já começou. Registra o próximo passo e a data no Planner.</p>
+  <h3 class="sub">🔁 Retenção · parou de comprar, mas pode voltar</h3>
+  <p class="pq">🧭 Sem mensagem sua. Registra o motivo, o histórico e o que você sabe de preço, estoque e vendas, pro Vitor retomar sem o cliente precisar contar tudo de novo.</p>
+  <h3 class="sub">⏹️ Inativa · sem pedido há 20 dias e sem sinal de volta (ou avisou que não quer continuar)</h3>
+  <div class="bolha"><span class="qual">💬 Última tentativa, antes de inativar (;ultima)</span>Oi, [Nome do Cliente]! Queria saber como estão as coisas por aí com as nossas cervejas. Vi que faz um tempinho que vocês não fazem um novo pedido e queria entender se tem algo em que podemos ajudar 😊</div>
+  <p class="pq">🧭 Respondeu? Entende o motivo e reavalia o caminho. Sem resposta? Inativa e registra o motivo.</p>
+  <h3 class="sub">⏰ Dia 75 · fim do Fôlego</h3>
+  <p class="pq">🧭 Ninguém fica. Mesma decisão, sem a opção de Fôlego: pediu nos últimos 20 dias → VDI (mesma mensagem). Parou, mas pode voltar → Retenção. Sem sinal de volta → última tentativa e inativa.</p>
+</div>
+
+<div class="bloco" id="c-frentes">
+  <h2>🤝🏾 Preço, cardápio e recompra: uma destrava a outra</h2>
+  <p><b>Preço certo faz a cerveja girar. O cardápio é onde o cliente do bar vê esse preço. E é o giro que traz a recompra.</b> Quando uma frente trava, quase sempre a causa está em outra.</p>
+  <h3 class="sub">💰 Preço</h3>
+  <span class="voce">🧭 <b>Investiga:</b> ele já definiu o preço de venda? Como chegou nesse valor? Faz sentido pro público da casa e pra estratégia da Hocus? Se ainda não definiu, ajuda a decidir com a <b>escadinha</b>, a partir da cerveja de massa mais cara da casa. Não fala em margem. <b>Por que cedo:</b> depois que o preço vai pro cardápio impresso, mudar dá trabalho.</span>
+  <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Qual a cerveja mais cara que sai hoje aqui, e por quanto?" · "E pra nossa, vocês pensaram em quanto?" · Se precisar ajustar: "Entendi como vocês chegaram nesse valor. A gente monta a sugestão pensando em cada casa, a partir da cerveja mais cara que vocês trabalham. Olhando pra operação de vocês, eu faria mais ou menos assim… Faz sentido?"</div>
+  <h3 class="sub">📋 Cardápio</h3>
+  <span class="voce">🧭 <b>Investiga:</b> a Hocus está no cardápio? Se não, tem outro lugar onde o cliente veja a cerveja (lousa, quadro, inserto, geladeira à vista, garçom oferecendo)? Quem decide? Quando costuma atualizar? Cardápio não é tarefa pendente: é a vitrine. Pra ajudar, você tem fotos e descrições das cervejas. E quando o cardápio estiver sendo montado, é a hora de conferir se o preço que vai lá é o certo.</span>
+  <div class="bolha"><span class="qual">💬 O argumento (;card)</span>"Na nossa base, clientes que não têm a Hocus no cardápio têm 3 vezes mais chance de parar de comprar com a gente. O cliente só pede o que vê, né? Por isso, ter nossas cervejas no cardápio é tão importante!"</div>
+  <p class="pq">🧭 Use assim, sem prometer resultado: o dado mostra uma relação, não garante o mesmo efeito em todo bar. Se precisar destravar, existe a bonificação de cardápio de até R$600: sempre o menor valor possível, e nunca como ponto de partida.</p>
+  <h3 class="sub">🔁 Recompra</h3>
+  <span class="voce">🧭 <b>Investiga:</b> quais cervejas saem mais? Alguma está parada? Quanto estoque tem e quanto tempo dura? Quanto tempo leva entre pedir e receber? Primeiro o giro, depois o estoque e só então a reposição. Não girou? Antes de falar de pedido, volta pro preço, pro cardápio e pra exposição.</span>
+  <div class="bolha"><span class="qual">💬 Ideia de fala</span>"Qual tem saído mais? E o estoque, acha que dura até quando?" · Acabando: "Bora já deixar a reposição encaminhada pra vocês não ficarem sem?"</div>
+  <div class="tbl" style="margin-top:12px"><table>
+    <tr><th>📊 Dados que ajudam</th><th>Uso</th></tr>
+    <tr><td>Cliente sem a Hocus no cardápio tem 3x mais chance de parar de comprar <span class="pq">(Jornada do Cliente ONT)</span></td><td><span class="tag cli">com o cliente</span></td></tr>
+    <tr><td>Quem fecha cardápio e preço faz o 2º pedido em 2 de cada 3 casos. Só o cardápio, 1 em 2 <span class="pq">(estudo com 96 clientes, jul a set/26)</span></td><td><span class="tag int">só pra você</span></td></tr>
+    <tr><td>7 em 10 preços fecham nas 3 primeiras semanas. 6 em 10 cardápios, depois disso <span class="pq">(mesmo estudo)</span></td><td><span class="tag int">só pra você</span></td></tr>
+    <tr><td>O 2º pedido sai, em média, por volta do dia 20 <span class="pq">(Planner)</span></td><td><span class="tag int">só pra você</span></td></tr>
+    <tr><td>Bar com visita do embaixador tem 1,6x menos churn. Com 3 ou mais pontos de marca, 2,6x menos <span class="pq">(Jornada do Cliente ONT)</span></td><td><span class="tag int">só pra você</span></td></tr>
+  </table></div>
+</div>
+
+<div class="bloco" id="c-objecoes">
+  <h2>🙋🏾 E se ele disser…</h2>
+  <span class="voce">🧭 Uma objeção quase sempre esconde uma causa. O caminho é sempre o mesmo: <b>entende a causa → faz uma pergunta → constrói um caminho junto.</b> Não é pra rebater o cliente. Nem todo "não" é definitivo.</span>
+  <div class="tbl"><table>
+    <tr><th>Ele diz</th><th>🧭 Investiga</th><th>💬 Uma pergunta possível</th><th>🧭 Caminhos</th></tr>
+    <tr><td><b>💰 "Tá caro"</b></td><td>Caro em quê: no preço de compra, no de venda, pro público, ou é medo de não vender?</td><td>"Caro comparando com o quê? Me conta como você tá pensando."</td><td>Preço de venda: escadinha. Medo de não girar: combina de olhar o giro juntos na semana 3. Preço de compra: política comercial vigente.</td></tr>
+    <tr><td><b>💰 "Vou vender mais barato"</b></td><td>Como a casa define preços e que resultado busca</td><td>"Como vocês costumam definir os preços aqui? O que vocês querem que aconteça com essa cerveja?"</td><td>Mostra a lógica da escadinha e o risco de desvalorizar a cerveja. Sem falar em margem.</td></tr>
+    <tr><td><b>📋 "Já coloquei no cardápio"</b></td><td>Se o preço está definido e como está vendendo</td><td>"Que ótimo! Me manda uma foto? E como tá saindo?"</td><td>Confere preço e destaque. Vende pouco? Olha a exposição e se a equipe oferece.</td></tr>
+    <tr><td><b>📋 "Acabei de imprimir o cardápio"</b></td><td>Quando dá pra atualizar e o que fazer até lá</td><td>"Quando vocês costumam atualizar? Até lá, tem algum lugar onde a gente consiga mostrar a cerveja?"</td><td>Quadro, lousa, inserto ou a equipe recomendando. Registra a data como negociação aberta.</td></tr>
+    <tr><td><b>📋 "Aqui não tem cardápio"</b></td><td>Como o cliente descobre o que tem pra beber</td><td>"Como o pessoal fica sabendo das cervejas que vocês têm?"</td><td>Lousa, geladeira à vista, garçom oferecendo. Manda fotos e descrições pra ajudar.</td></tr>
+    <tr><td><b>📋 "Coloco se vocês me derem algo"</b></td><td>O que ele espera e o que pesa na decisão</td><td>"O que faria esse passo valer a pena pra vocês?"</td><td>Constrói valor primeiro. Se precisar, bonificação de até R$600, o menor valor possível.</td></tr>
+    <tr><td><b>📦 "Não girou"</b></td><td>Se está visível, gelada, no cardápio e se a equipe oferece</td><td>"Onde ela tá ficando aí? O pessoal costuma oferecer?"</td><td>Ajusta exposição, apresentação e preço antes de falar de pedido. Se precisar ver no ponto, chama o embaixador.</td></tr>
+    <tr><td><b>📦 "Ainda tenho estoque"</b></td><td>A previsão de duração e o ritmo de venda</td><td>"Acha que dura mais quanto tempo?"</td><td>Agenda o próximo contato pra perto dessa data. Não está girando? Volta no "não girou".</td></tr>
+    <tr><td><b>🤔 "Preciso ver com meu sócio"</b></td><td>Quem participa da decisão e o que precisa pra decidir</td><td>"Ele costuma decidir com base em quê? Posso te mandar algo pra mostrar pra ele?"</td><td>Manda um resumo simples e combina uma data pra voltar. Se fizer sentido, fala com o sócio direto.</td></tr>
+  </table></div>
+</div>
+
+<div class="bloco" id="c-canais">
+  <h2>💬 Ligação, áudio ou texto</h2>
+  <span class="voce">🧭 O canal certo é o que ajuda a conversa a avançar. Não é regra rígida.</span>
+  <div class="tbl"><table>
+    <tr><th>Canal</th><th>Pra quê</th><th>Como fazer bem</th></tr>
+    <tr><td><b>📞 Ligação</b></td><td>Investigar, negociar e tratar objeção</td><td>Curta, escuta primeiro, termina com um próximo passo</td></tr>
+    <tr><td><b>🎙️ Áudio</b></td><td>Explicar algo específico ou dar um toque pessoal</td><td>Até 30 segundos, um assunto por áudio, termina com uma pergunta. Em 3 partes: quem é, o assunto em uma frase, a pergunta</td></tr>
+    <tr><td><b>✍️ Texto</b></td><td>Confirmar acordos, mandar sugestão de preço, materiais e o resumo do combinado</td><td>Curto, uma pergunta por mensagem</td></tr>
+  </table></div>
+  <p>🧭 <b>Negociar pelo WhatsApp dá, sem textão.</b> Se travar ou virar discussão, muda o canal:</p>
+  <div class="bolha">"Posso te ligar rapidinho? Fica mais fácil de explicar."</div>
+</div>
+
+<div class="bloco" id="c-registro">
+  <h2>📝 Registro no Planner e próximo passo</h2>
+  <span class="voce">🧭 O contato só está bem conduzido quando o contexto está registrado e a próxima ação está clara. Depois de cada conversa relevante, registra: <b>o principal desafio · o que está pendente · o que foi combinado e quem ficou responsável · a próxima ação e a data de retorno.</b></span>
+  <div class="tbl"><table>
+    <tr><th>❌ Vago</th><th>✅ Com contexto</th></tr>
+    <tr><td>"Cardápio pendente"</td><td>"Cardápio é atualizado em novembro, quem decide é o sócio. Combinei de mandar fotos e descrições até sexta. Volto dia 05/11."</td></tr>
+    <tr><td>"Cliente sem retorno"</td><td>"2 mensagens (dias 10 e 14) e 1 ligação (dia 17) sem resposta. Pedi visita ao embaixador. Tento de novo por áudio dia 20."</td></tr>
+    <tr><td>"Falei de preço"</td><td>"Ainda não definiu o preço da long neck. A referência da casa é a [cerveja de massa mais cara], e ele acha que o público pode estranhar. Mandei a escadinha e combinamos de olhar o giro na semana 3."</td></tr>
+  </table></div>
+</div>
+
+<footer>Hocus Pocus · Time de Expansão de Clientes · Este Guia é o material único da Ativação: substitui o Kit, a Rotina, a Colinha, o Manual de Conversas e o Playbook (arquivados em 21/10/2026).</footer>
+
+</div></body></html>
